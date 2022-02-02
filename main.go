@@ -6,12 +6,6 @@ import (
 	"os"
 )
 
-func assert(some bool) {
-	if !some {
-		panic(some)
-	}
-}
-
 func main() {
 
 	args := os.Args[1:]
@@ -20,7 +14,6 @@ func main() {
 	formatStr := []rune(farg)
 	towardsC := formatStr[0]
 	separatorC := formatStr[1]
-	// assert(formatStr[2] == '|')
 
 	inputStrRaw := formatStr[3:]
 
