@@ -6,9 +6,17 @@ import (
 	"os"
 )
 
+func help() {
+	fmt.Printf("usage: e.g.: '>, \\n>|,\">\\\\\"'\n\nthe program only accepts a single argument\nthe 1st character will be used to mark a transitions of a string of characters preceding it, to one a string of character succeeding it\nthe 2nd character will be used to mark separate transitions\nthe 3rd character will be ignored altogether\nfrom then on a set of transitions follow, interpreting the 1st and 2nd characters as mentioned before")
+	os.Exit(0)
+}
+
 func main() {
 
 	args := os.Args[1:]
+	if len(args) != 1 {
+		help()
+	}
 	farg := args[0]
 
 	formatStr := []rune(farg)
